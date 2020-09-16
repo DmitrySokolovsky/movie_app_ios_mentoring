@@ -7,29 +7,17 @@
 //
 
 import Foundation
-import UIKit
 
-class NetworkManager<T: Decodable> {
-    static func get(urlString: String, complition: @escaping (_ data: Decodable) -> ()) {
-        guard let url = URL(string: urlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) {
-            (data, response, error) in
-            guard let data = data else { return }
-            
-            do {
-                let result = try JSONDecoder().decode(T.self, from: data)
-                complition(result)
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }.resume()
-    }
+class NetworkManager: NetworkManagerType {
+    private var urlSession = URLSession.shared
     
-    static func loadImage(_ url: URL, complition: @escaping (UIImage) -> ()) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data, let image = UIImage(data: data) {
-                complition(image)
+    func makeRequest(request: URLRequest, complition: @escaping(HTTPResult<Data>) -> ()) {
+        urlSession.dataTask(with: request) { (data, response, error) in
+            if let data = data {
+                complition(.success(data: data))
+            } else if let error = error {
+                complition(.error(error: error))
+            } else {
                 return
             }
         }.resume()

@@ -21,11 +21,6 @@ class MovieTableViewModel: TableViewModelType {
     }
     
     func fetchMovies(complition: @escaping () -> ()) {
-        NetworkManager<MovieList>.get(urlString: MovieEndpoints.all.getUrl(page: 1)) { [weak self] movies in
-            guard let moviesList = movies as? MovieList else { return }
-            self?.movies = moviesList.results
-            complition()
-        }
     }
     
 }

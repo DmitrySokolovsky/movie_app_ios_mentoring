@@ -35,11 +35,7 @@ class MovieCellViewModel: TableCellViewModelType {
     
     func getMovieImage(complition: @escaping () -> ()) {
         guard let url = getImageUrl() else { return }
-        
-        NetworkManager<Movie>.loadImage(url) { [weak self] image in
-            self?.image = image
-            complition()
-        }
+
        
     }
 }
