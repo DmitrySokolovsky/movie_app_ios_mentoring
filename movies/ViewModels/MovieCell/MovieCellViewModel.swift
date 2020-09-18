@@ -18,9 +18,9 @@ class MovieCellViewModel: TableCellViewModelType {
         return dataForDisplay.title
     }
     
-    var overview: String {
-        return dataForDisplay.overview ?? ""
-    }
+//    var overview: String {
+//        return dataForDisplay.overview ?? ""
+//    }
     
     init(movie: Movie) {
         self.dataForDisplay = movie
@@ -34,8 +34,6 @@ class MovieCellViewModel: TableCellViewModelType {
     }
     
     func getMovieImage(complition: @escaping () -> ()) {
-        guard let url = getImageUrl() else { return }
-
        
     }
 }

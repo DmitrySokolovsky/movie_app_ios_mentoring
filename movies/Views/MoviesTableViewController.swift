@@ -21,9 +21,7 @@ class MoviesTableViewController: UITableViewController {
         tableView.bounces = false
         
         viewModel?.fetchMovies { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
+            self?.tableView.reloadData()
         }
     }
 
@@ -38,23 +36,18 @@ class MoviesTableViewController: UITableViewController {
             return 0
         }
         
-        
         return viewModel.numberOfRows()
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieViewCell
-
         guard let viewModel = viewModel else {
             return UITableViewCell()
         }
-
         
         let cellVM = viewModel.cellViewModel(forIndexPath: indexPath)
         cell.viewModel = cellVM
 
         return cell
     }
-
 }

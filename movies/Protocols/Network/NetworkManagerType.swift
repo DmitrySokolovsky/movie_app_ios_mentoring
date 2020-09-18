@@ -9,5 +9,5 @@
 import Foundation
 
 protocol NetworkManagerType {
-    func makeRequest(request: URLRequest, complition: @escaping (HTTPResult<Data>) -> ()) -> ()
+    func makeRequest<T: Decodable>(endpoint: EndpointType, complition: @escaping (Result<T, Error>) -> ()) -> ()
 }

@@ -12,15 +12,14 @@ class MovieViewCell: UITableViewCell {
     
     weak var viewModel: MovieCellViewModel? {
         didSet {
-            
             guard let viewModel = viewModel else { return }
             titleLabel.text = viewModel.dataForDisplay.title
             overviewLabel.text = viewModel.dataForDisplay.overview
-            viewModel.getMovieImage { [weak self] in
-                DispatchQueue.main.async {
-                    self?.movieImage.image = viewModel.image
-                }
-            }
+//            viewModel.getMovieImage { [weak self] in
+//                DispatchQueue.main.async {
+//                    self?.movieImage.image = viewModel.image
+//                }
+//            }
         }
     }
 
