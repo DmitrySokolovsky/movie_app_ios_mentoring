@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MovieServiceType {
     var networkManager: NetworkManagerType { get }
+    var imageManager: ImageManagerType { get }
     func getMovies(complition: @escaping (Result<MovieList, Error>) -> ())
+    func loadMovieImage(imageName: String, complition: @escaping (Result<UIImage, Error>) -> ()) -> ()
 }

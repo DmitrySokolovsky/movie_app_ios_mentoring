@@ -13,7 +13,7 @@ class MovieTableViewModel: MovieTableViewModelType {
     
     internal var movies: [Movie]?
     
-    var errorMessage: String?
+    var errorMessage: String? // Currently just class field
 
     func numberOfRows() -> Int {
         return movies?.count ?? 0

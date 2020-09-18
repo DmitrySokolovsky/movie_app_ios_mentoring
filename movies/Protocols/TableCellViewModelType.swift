@@ -11,4 +11,5 @@ import Foundation
 protocol TableCellViewModelType {
     associatedtype CellData
     var dataForDisplay: CellData { get }
+    var imageManager: ImageManagerType? { get }
 }

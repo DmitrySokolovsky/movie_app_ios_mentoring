@@ -26,8 +26,6 @@ class NetworkManager: NetworkManagerType {
                 } catch let error {
                     complition(.failure(error))
                 }
-            } else {
-                
             }
         }
         
