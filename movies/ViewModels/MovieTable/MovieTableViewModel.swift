@@ -9,10 +9,14 @@
 import Foundation
 
 class MovieTableViewModel: MovieTableViewModelType {
-    internal var movieService: MovieServiceType = MovieService()
+    internal var movieService: MovieServiceType
     internal var movies: [Movie]?
     var errorMessage: String? // Currently just class field
     var page: Box<Int> = Box(1)
+    
+    init() {
+        movieService = MovieService()
+    }
 
     func numberOfRows() -> Int {
         return movies?.count ?? 0

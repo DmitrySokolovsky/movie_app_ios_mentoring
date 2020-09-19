@@ -33,6 +33,22 @@ class MovieService: MovieServiceType {
         }
     }
     
+    func getMovieDetails(movieId: Int, complition: @escaping (Result<MovieDetailsType, Error>) -> ()) {
+        networkManager.makeRequest(endpoint: MovieEndpoints.getDetails(movieId: movieId).endpoint) {(result: Result<MovieDetails, Error>) in
+            switch result {
+            case .success(let movieDetails):
+                DispatchQueue.main.async {
+                    complition(.success(movieDetails))
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    complition(.failure(error))
+                }
+            }
+            
+        }
+    }
+    
     func loadMovieImage(imageName: String, complition: @escaping (Result<UIImage, Error>) -> ()) {
         let imageUrl = ImagePath().getImageUrl(for: imageName)
         
