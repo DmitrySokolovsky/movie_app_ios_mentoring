@@ -12,6 +12,7 @@ protocol MovieTableViewModelType {
     var movieService: MovieServiceType { get }
     var errorMessage: String? { get }
     var movies: [Movie]? { get }
+    var page: Box<Int> { get }
     func numberOfRows() -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> MovieCellViewModel?
     func fetchMovies(page: Int, complition: @escaping () -> ()) -> ()
