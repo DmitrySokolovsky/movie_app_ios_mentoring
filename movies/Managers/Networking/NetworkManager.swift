@@ -41,7 +41,7 @@ class NetworkManager: NetworkManagerType {
         guard let url = urlComponents.url else { return nil }
         var urlRequest = URLRequest(url: url)
         
-        urlRequest.httpMethod = endpoint.method
+        urlRequest.httpMethod = endpoint.method.rawValue
         
         return urlRequest
     }

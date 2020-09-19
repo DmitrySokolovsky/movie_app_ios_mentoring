@@ -13,5 +13,5 @@ protocol EndpointType {
     
     var parameters: [URLQueryItem] { get set }
     
-    var method: String { get }
+    var method: HTTPMethod { get }
 }

@@ -15,5 +15,5 @@ struct Endpoint: EndpointType {
     
     var parameters: [URLQueryItem]
     
-    var method: String
+    var method: HTTPMethod
 }

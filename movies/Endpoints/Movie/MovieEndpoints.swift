@@ -19,7 +19,7 @@ enum MovieEndpoints {
         switch self {
         case .getAllMovies(let page):
             let params = [URLQueryItem(name: "page", value: String(describing: page))]
-            return Endpoint(path: MoviePaths.allMovies.rawValue, parameters: self.getParameters(params), method: "GET")
+            return Endpoint(path: MoviePaths.allMovies.rawValue, parameters: self.getParameters(params), method: .get)
         }
     }
         

@@ -9,29 +9,16 @@
 import Foundation
 import UIKit
 
-class MovieCellViewModel: TableCellViewModelType { // TODO change protocol
+class MovieCellViewModel: MovieCellViewModelType {
     var imageManager: ImageManagerType?
-    
-    internal var dataForDisplay: Movie
-    
-    var image: UIImage!
-    
-    var imagePath: String? {
-        return dataForDisplay.poster_path
-    }
-    
-    var title: String {
-        print(dataForDisplay.title)
-        return dataForDisplay.title
-    }
-    
-    var overview: String {
-        return dataForDisplay.overview ?? ""
-    }
+    var image: UIImage?
+    var imagePath: String?
+    var title: String
     
     init(movie: Movie) {
-        self.dataForDisplay = movie
         imageManager = ImageManager()
+        self.imagePath = movie.poster_path
+        self.title = movie.title
     }
     
     func getMovieImage(complition: @escaping () -> ()) {
