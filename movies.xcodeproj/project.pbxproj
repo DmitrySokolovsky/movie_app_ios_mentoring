@@ -98,6 +98,7 @@
 		41022CF3250E357C00A2709E /* movies */ = {
 			isa = PBXGroup;
 			children = (
+				4161A4C92515625700FB218F /* Helpers */,
 				417362A8250E63720021A364 /* Extensions */,
 				41022D12250E493100A2709E /* Endpoints */,
 				41022D0D250E35F100A2709E /* Managers */,
@@ -127,7 +128,6 @@
 		41022D0B250E35DD00A2709E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4127DE432515583B004C123F /* ImagePath */,
 				4127DE412515582C004C123F /* Endpoint */,
 				41022D11250E47A100A2709E /* Movie */,
 			);
@@ -215,6 +215,14 @@
 				41FE71BF250FB8EC00092A7A /* MovieViewCell.swift */,
 			);
 			path = MovieTable;
+			sourceTree = "<group>";
+		};
+		4161A4C92515625700FB218F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4127DE432515583B004C123F /* ImagePath */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		4173629A250E51430021A364 /* Networking */ = {

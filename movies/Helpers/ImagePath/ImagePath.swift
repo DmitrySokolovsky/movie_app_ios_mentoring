@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ImagePath: ImagePathType {
+class ImagePath: ImagePathType { // TODO
     var baseImageUrl: String = BASE_IMAGE_URL
 
     func getImageUrl(for imageName: String) -> URL? {

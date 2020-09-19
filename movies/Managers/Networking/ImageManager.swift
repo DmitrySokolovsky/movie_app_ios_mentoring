@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ImageManager: ImageManagerType {
-    func loadImage(from url: URL?, complition: @escaping (Result<UIImage, Error>) -> ()) {
+    func loadImage(from url: URL?, complition: @escaping (Result<UIImage?, Error>) -> ()) {
         let session = URLSession(configuration: .default)
         guard let url = url else {
             return
@@ -24,9 +24,11 @@ class ImageManager: ImageManagerType {
             if let data = data {
                 let image = UIImage(data: data)
                 guard let imageResult = image else {
-                    return // TODO add default image
+                    return
                 }
                 complition(.success(imageResult))
+            } else {
+                complition(.success(nil))
             }
         }
         

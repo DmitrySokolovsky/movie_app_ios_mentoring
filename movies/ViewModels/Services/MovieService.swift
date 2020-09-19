@@ -18,8 +18,8 @@ class MovieService: MovieServiceType {
         imageManager = ImageManager()
     }
     
-    func getMovies(complition: @escaping (Result<MovieList, Error>) -> ()) {
-        networkManager.makeRequest(endpoint: MovieEndpoints.getAllMovies(page: 1).getEndpoint()) {(result: Result<MovieList, Error>) in
+    func getMovies(page: Int, complition: @escaping (Result<MovieList, Error>) -> ()) {
+        networkManager.makeRequest(endpoint: MovieEndpoints.getAllMovies(page: page).endpoint) {(result: Result<MovieList, Error>) in
             switch result {
             case .success(let movieList):
                 DispatchQueue.main.async {
@@ -38,8 +38,12 @@ class MovieService: MovieServiceType {
         
         imageManager.loadImage(from: imageUrl) { result in
             switch result {
-            case .success(let image): // ???
+            case .success(let image):
                 DispatchQueue.main.async {
+                    guard let image = image else {
+                        complition(.success(UIImage(imageLiteralResourceName: "placeholder_meadia")))
+                        return
+                    }
                     complition(.success(image))
                 }
             case .failure(let error):

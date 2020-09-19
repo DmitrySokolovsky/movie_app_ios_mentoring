@@ -9,7 +9,7 @@
 import UIKit
 
 class MoviesTableViewController: UITableViewController {
-    private var viewModel: MovieTableViewModel?
+    private var viewModel: MovieTableViewModelType?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,14 +20,19 @@ class MoviesTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.bounces = false
         
-        viewModel?.fetchMovies { [weak self] in
+        viewModel?.fetchMovies(page: 1) { [weak self] in
+            if let errorMessage = self?.viewModel?.errorMessage {
+                self?.tableView.headerView(forSection: 0)?.textLabel?.text = errorMessage
+                return
+            }
+            
             self?.tableView.reloadData()
         }
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int { // TODO = extensions
         return 1
     }
 

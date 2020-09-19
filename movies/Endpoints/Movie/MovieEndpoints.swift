@@ -15,7 +15,7 @@ enum MoviePaths: String {
 enum MovieEndpoints {
     case getAllMovies(page: Int)
     
-    func getEndpoint() -> Endpoint {
+    var endpoint: Endpoint {
         switch self {
         case .getAllMovies(let page):
             let params = [URLQueryItem(name: "page", value: String(describing: page))]

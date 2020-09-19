@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 protocol ImageManagerType {
-    func loadImage(from url: URL?, complition: @escaping (Result<UIImage, Error>) -> ())
+    func loadImage(from url: URL?, complition: @escaping (Result<UIImage?, Error>) -> ())
 }

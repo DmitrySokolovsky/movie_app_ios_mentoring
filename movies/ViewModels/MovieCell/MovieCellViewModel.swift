@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MovieCellViewModel: TableCellViewModelType {
+class MovieCellViewModel: TableCellViewModelType { // TODO change protocol
     var imageManager: ImageManagerType?
     
     internal var dataForDisplay: Movie

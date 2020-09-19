@@ -24,8 +24,8 @@ class MovieTableViewModel: MovieTableViewModelType {
         return MovieCellViewModel(movie: movie)
     }
     
-    func fetchMovies(complition: @escaping () -> ()) {
-        movieService.getMovies { [weak self] result in
+    func fetchMovies(page: Int, complition: @escaping () -> ()) {
+        movieService.getMovies(page: page) { [weak self] result in
             switch result {
             case .success(let movies):
                 print(movies.results.count)
