@@ -9,6 +9,7 @@
 import UIKit
 
 class MovieViewCell: UITableViewCell {
+    // MARK: - view cell items
     
     weak var viewModel: MovieCellViewModel? {
         didSet {
@@ -45,6 +46,8 @@ class MovieViewCell: UITableViewCell {
         view.layer.borderWidth = 0.3
         return view
     }()
+    
+    // MARK: - init
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
