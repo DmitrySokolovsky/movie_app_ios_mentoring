@@ -9,7 +9,7 @@
 import UIKit
 
 class MoviesTableViewController: UITableViewController {
-    private var viewModel: MovieTableViewModel?
+    private var viewModel: MovieTableViewModelType?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,16 +20,19 @@ class MoviesTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.bounces = false
         
-        viewModel?.fetchMovies { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
+        viewModel?.fetchMovies(page: 1) { [weak self] in
+            if let errorMessage = self?.viewModel?.errorMessage {
+                self?.tableView.headerView(forSection: 0)?.textLabel?.text = errorMessage
+                return
             }
+            
+            self?.tableView.reloadData()
         }
     }
+}
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
+extension MoviesTableViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int { // TODO = extensions
         return 1
     }
 
@@ -38,23 +41,22 @@ class MoviesTableViewController: UITableViewController {
             return 0
         }
         
-        
         return viewModel.numberOfRows()
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieViewCell
+        if let tableCell = cell {
+            guard let viewModel = viewModel else {
+                return UITableViewCell()
+            }
+            
+            let cellVM = viewModel.cellViewModel(forIndexPath: indexPath)
+            tableCell.viewModel = cellVM
 
-        guard let viewModel = viewModel else {
-            return UITableViewCell()
+            return tableCell
         }
-
         
-        let cellVM = viewModel.cellViewModel(forIndexPath: indexPath)
-        cell.viewModel = cellVM
-
-        return cell
+        return UITableViewCell()
     }
-
 }

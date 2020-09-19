@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct Movie: Decodable {
+struct Movie: Decodable, MovieType {
     var id: Int
     var title: String
     var overview: String?
     var poster_path: String?
 }
 
-struct MovieList: Decodable {
+struct MovieList: Decodable, MovieListType {
+    var results: [Movie]
     var page: Int
     var total_pages: Int
-    var results: [Movie]
 }
