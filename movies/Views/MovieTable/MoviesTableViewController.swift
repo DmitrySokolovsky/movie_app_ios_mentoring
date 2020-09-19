@@ -29,9 +29,9 @@ class MoviesTableViewController: UITableViewController {
             self?.tableView.reloadData()
         }
     }
+}
 
-    // MARK: - Table view data source
-
+extension MoviesTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int { // TODO = extensions
         return 1
     }
@@ -45,14 +45,18 @@ class MoviesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieViewCell
-        guard let viewModel = viewModel else {
-            return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieViewCell
+        if let tableCell = cell {
+            guard let viewModel = viewModel else {
+                return UITableViewCell()
+            }
+            
+            let cellVM = viewModel.cellViewModel(forIndexPath: indexPath)
+            tableCell.viewModel = cellVM
+
+            return tableCell
         }
         
-        let cellVM = viewModel.cellViewModel(forIndexPath: indexPath)
-        cell.viewModel = cellVM
-
-        return cell
+        return UITableViewCell()
     }
 }

@@ -18,7 +18,7 @@ class MovieService: MovieServiceType {
         imageManager = ImageManager()
     }
     
-    func getMovies(page: Int, complition: @escaping (Result<MovieList, Error>) -> ()) {
+    func getMovies(page: Int, complition: @escaping (Result<MovieListType, Error>) -> ()) {
         networkManager.makeRequest(endpoint: MovieEndpoints.getAllMovies(page: page).endpoint) {(result: Result<MovieList, Error>) in
             switch result {
             case .success(let movieList):
