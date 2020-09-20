@@ -20,3 +20,14 @@ struct MovieList: Decodable, MovieListType {
     var page: Int
     var total_pages: Int
 }
+
+struct MovieDetails: Decodable, MovieDetailsType {
+    var id: Int
+    var title: String
+    var overview: String?
+    var poster_path: String?
+    var homepage: String?
+    var popularity: Double
+    var release_date: String
+    var vote_average: Double
+}

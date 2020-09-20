@@ -14,4 +14,5 @@ protocol MovieServiceType {
     var imageManager: ImageManagerType { get }
     func getMovies(page: Int, complition: @escaping (Result<MovieListType, Error>) -> ())
     func loadMovieImage(imageName: String, complition: @escaping (Result<UIImage, Error>) -> ()) -> ()
+    func getMovieDetails(movieId: Int, complition: @escaping (Result<MovieDetailsType, Error>) -> ()) -> ()
 }

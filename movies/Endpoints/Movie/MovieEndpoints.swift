@@ -8,18 +8,17 @@
 
 import Foundation
 
-enum MoviePaths: String {
-    case allMovies = "/3/movie/popular"
-}
-
 enum MovieEndpoints {
     case getAllMovies(page: Int)
+    case getDetails(movieId: Int)
     
     var endpoint: Endpoint {
         switch self {
         case .getAllMovies(let page):
             let params = [URLQueryItem(name: "page", value: String(describing: page))]
-            return Endpoint(path: MoviePaths.allMovies.rawValue, parameters: self.getParameters(params), method: .get)
+            return Endpoint(path: "/3/movie/popular", parameters: self.getParameters(params), method: .get)
+        case .getDetails(let movieId):
+            return Endpoint(path: "/3/movie/\(movieId)", parameters: defaultParams, method: .get)
         }
     }
         
