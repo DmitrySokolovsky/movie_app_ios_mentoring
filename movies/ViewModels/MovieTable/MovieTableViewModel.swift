@@ -12,6 +12,7 @@ class MovieTableViewModel: MovieTableViewModelType {
     internal var movieService: MovieServiceType
     internal var movies: [Movie]?
     var errorMessage: String? // Currently just class field
+    var selectedIndexPath: IndexPath?
     var page: Box<Int> = Box(1)
     
     init() {
@@ -39,6 +40,17 @@ class MovieTableViewModel: MovieTableViewModelType {
                 complition()
             }
         }
+    }
+    
+    func selectRow(atIndexPath indexPath: IndexPath) {
+        self.selectedIndexPath = indexPath
+    }
+    
+    func viewModelForSelectedRow() -> MovieDetailsViewModelType? {
+        guard let selectedIndexPath = selectedIndexPath else { return nil }
+        guard let selectedMovieId = movies?[selectedIndexPath.row] else { return nil }
+        
+        return MovieDetailsViewModel(movieId: selectedMovieId.id)
     }
     
 }

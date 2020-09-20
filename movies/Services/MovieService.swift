@@ -34,9 +34,11 @@ class MovieService: MovieServiceType {
     }
     
     func getMovieDetails(movieId: Int, complition: @escaping (Result<MovieDetailsType, Error>) -> ()) {
+        print(MovieEndpoints.getDetails(movieId: movieId).endpoint)
         networkManager.makeRequest(endpoint: MovieEndpoints.getDetails(movieId: movieId).endpoint) {(result: Result<MovieDetails, Error>) in
             switch result {
             case .success(let movieDetails):
+                print("==>", movieDetails)
                 DispatchQueue.main.async {
                     complition(.success(movieDetails))
                 }

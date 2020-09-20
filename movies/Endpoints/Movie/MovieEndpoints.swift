@@ -18,7 +18,7 @@ enum MovieEndpoints {
             let params = [URLQueryItem(name: "page", value: String(describing: page))]
             return Endpoint(path: "/3/movie/popular", parameters: self.getParameters(params), method: .get)
         case .getDetails(let movieId):
-            return Endpoint(path: "/movie/\(movieId)", parameters: defaultParams, method: .get)
+            return Endpoint(path: "/3/movie/\(movieId)", parameters: defaultParams, method: .get)
         }
     }
         

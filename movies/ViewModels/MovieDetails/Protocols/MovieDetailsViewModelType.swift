@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MovieDetailsViewModelType {
     var movieDetails: MovieDetailsType? { get }
     var movieService: MovieServiceType { get }
+    var errorMessage: String? { get }
     var movieId: Int { get set }
     func getMovieDetails(complition: @escaping () -> ()) -> ()
-//    func getSimilarMovies(movieId: Int, complition: @escaping () -> ()) -> ()
+    func getMovieImage(complition: @escaping(_: UIImage?) -> ())
 }

@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="1000" y="-173"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="kD4-Nh-Wb2">
             <objects>
-                <viewController id="6At-sz-MOX" sceneMemberID="viewController">
+                <viewController id="6At-sz-MOX" customClass="DetailsViewController" customModule="movies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P1R-fi-VUp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

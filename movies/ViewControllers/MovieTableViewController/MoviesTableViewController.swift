@@ -59,4 +59,22 @@ extension MoviesTableViewController {
         
         return UITableViewCell()
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+        viewModel.selectRow(atIndexPath: indexPath)
+        performSegue(withIdentifier: "navigateToDetails", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier, let viewModel = viewModel else {
+            return
+        }
+        
+        if (identifier == "navigateToDetails") {
+            if let dvc = segue.destination as? DetailsViewController {
+                dvc.viewModel = viewModel.viewModelForSelectedRow()
+            }
+        }
+    }
 }

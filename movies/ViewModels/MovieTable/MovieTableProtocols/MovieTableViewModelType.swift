@@ -16,4 +16,6 @@ protocol MovieTableViewModelType {
     func numberOfRows() -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> MovieCellViewModel?
     func fetchMovies(page: Int, complition: @escaping () -> ()) -> ()
+    func selectRow(atIndexPath indexPath: IndexPath) -> ()
+    func viewModelForSelectedRow() -> MovieDetailsViewModelType?
 }
