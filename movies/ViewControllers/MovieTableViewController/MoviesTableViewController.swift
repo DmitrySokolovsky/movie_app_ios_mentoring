@@ -13,7 +13,7 @@ class MoviesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.rowHeight = UITableView.automaticDimension
         viewModel = MovieTableViewModel()
         tableView.register(MovieViewCell.self, forCellReuseIdentifier: "movieCell")
