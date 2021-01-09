@@ -29,16 +29,9 @@ class MovieViewCell: UITableViewCell {
     
     var movieImage: UIImageView = {
         let img = UIImageView()
+        img.contentMode = .scaleAspectFit
+        
         return img
-    }()
-    
-    var overviewLabel: UILabel = {
-        let label = UILabel()
-        label.font = label.font.withSize(14)
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        label.sizeToFit()
-        return label
     }()
     
     var containerView: UIView = {
@@ -56,13 +49,10 @@ class MovieViewCell: UITableViewCell {
         containerView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
         
         containerView.addSubview(movieImage)
-        movieImage.anchor(top: containerView.topAnchor, left: containerView.leftAnchor, bottom: bottomAnchor, width: 150, height: 190)
+        movieImage.anchor(top: containerView.topAnchor, left: containerView.leftAnchor, bottom: bottomAnchor, width: 150, height: 200)
         
         containerView.addSubview(titleLabel)
         titleLabel.anchor(top: containerView.topAnchor, left: movieImage.rightAnchor, paddingTop: 10, paddingLeft: 10)
-
-        containerView.addSubview(overviewLabel)
-        overviewLabel.anchor(top: titleLabel.bottomAnchor, left: movieImage.rightAnchor, bottom: bottomAnchor, right: containerView.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingRight: 10)
         
         updateFocusIfNeeded()
     }

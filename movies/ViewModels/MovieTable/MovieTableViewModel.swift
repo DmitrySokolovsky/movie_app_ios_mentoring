@@ -18,7 +18,7 @@ class MovieTableViewModel: MovieTableViewModelType {
     init() {
         movieService = MovieService()
     }
-
+    
     func numberOfRows() -> Int {
         return movies?.count ?? 0
     }
