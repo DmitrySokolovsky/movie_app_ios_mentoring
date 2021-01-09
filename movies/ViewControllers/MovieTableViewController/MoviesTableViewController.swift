@@ -9,9 +9,11 @@
 import UIKit
 
 class MoviesTableViewController: UITableViewController {
+    // MARK: - properties
     private var viewModel: MovieTableViewModelType?
     private var navigator: MovieNavigator?
 
+    // MARK: - lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +25,7 @@ class MoviesTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.bounces = false
         
-        viewModel?.fetchMovies(page: 1) { [weak self] in
+        viewModel?.fetchMovies(page: 1) { [weak self] in // TODO remove int value
             if let errorMessage = self?.viewModel?.errorMessage {
                 self?.tableView.headerView(forSection: 0)?.textLabel?.text = errorMessage
                 return
