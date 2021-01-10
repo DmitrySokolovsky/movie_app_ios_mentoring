@@ -11,5 +11,5 @@ import Foundation
 protocol Navigator {
     associatedtype Route
         
-    func navigate(to route: Route, viewModel: Any?)
+    func navigate(to route: Route)
 }

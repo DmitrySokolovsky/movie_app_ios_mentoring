@@ -69,6 +69,6 @@ extension MoviesTableViewController {
         guard let viewModel = viewModel else { return } // TODO remove
         viewModel.selectRow(atIndexPath: indexPath)
         let viewModelForSelectedRow = viewModel.viewModelForSelectedRow()
-        navigator?.navigate(to: .movieDetails, viewModel: viewModelForSelectedRow)
+        navigator?.navigate(to: .movieDetails(viewModel: viewModelForSelectedRow))
     }
 }

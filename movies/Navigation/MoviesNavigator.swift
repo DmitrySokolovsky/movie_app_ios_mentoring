@@ -15,29 +15,29 @@ class MovieNavigator: Navigator {
     
     enum Route {
         case movieTable
-        case movieDetails
+        case movieDetails(viewModel: MovieDetailsViewModelType?)
     }
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func navigate(to route: Route, viewModel: Any?) {
+    func navigate(to route: Route) {
         
         guard let navController = navigationController else {
             return
         }
         
-        let viewControllerToPresent = makeViewController(for: route, viewModel: viewModel)
+        let viewControllerToPresent = makeViewController(for: route)
         
         navController.pushViewController(viewControllerToPresent, animated: true)
     }
     
-    func makeViewController(for route: Route, viewModel: Any?) -> UIViewController {
+    func makeViewController(for route: Route) -> UIViewController {
         
         switch route {
-        case .movieDetails:
-            return viewControllerFactory.makeViewController(controller: .movieDetailsController(viewModel: viewModel as? MovieDetailsViewModelType))
+        case .movieDetails(let viewModel):
+            return viewControllerFactory.makeViewController(controller: .movieDetailsController(viewModel: viewModel))
         case .movieTable:
             return viewControllerFactory.makeViewController(controller: .movieTableController)
         }

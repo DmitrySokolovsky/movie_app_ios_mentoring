@@ -14,6 +14,7 @@
 		41022D01250E357D00A2709E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41022CFF250E357D00A2709E /* LaunchScreen.storyboard */; };
 		41022D09250E35CD00A2709E /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41022D08250E35CD00A2709E /* MoviesTableViewController.swift */; };
 		41022D10250E479C00A2709E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41022D0F250E479C00A2709E /* Movie.swift */; };
+		4120D06825AB71290048DC9D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4120D06725AB71290048DC9D /* Color.swift */; };
 		4127DE112515389D004C123F /* MovieEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4127DE102515389D004C123F /* MovieEndpoints.swift */; };
 		4127DE1625153D68004C123F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4127DE1525153D68004C123F /* Endpoint.swift */; };
 		4127DE1925153D78004C123F /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4127DE1825153D78004C123F /* EndpointType.swift */; };
@@ -31,6 +32,16 @@
 		41466F9325165DA200E22CA1 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41466F9225165DA200E22CA1 /* Box.swift */; };
 		414ED00025AA6ED3001D9809 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 414ECFFF25AA6ED3001D9809 /* GoogleService-Info.plist */; };
 		414ED03325AA7280001D9809 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414ED03225AA7280001D9809 /* EntryViewController.swift */; };
+		414ED03925AA7EFC001D9809 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414ED03825AA7EFC001D9809 /* LoginViewController.swift */; };
+		414ED03D25AA7F0C001D9809 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414ED03C25AA7F0C001D9809 /* SignUpViewController.swift */; };
+		414ED04225AA7F3F001D9809 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414ED04125AA7F3F001D9809 /* SignUpViewModel.swift */; };
+		414ED04525AA7F50001D9809 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414ED04425AA7F50001D9809 /* LoginViewModel.swift */; };
+		414ED04825AA7F63001D9809 /* SignUpViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414ED04725AA7F63001D9809 /* SignUpViewModelType.swift */; };
+		414ED04B25AA7F73001D9809 /* LogInViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414ED04A25AA7F73001D9809 /* LogInViewModelType.swift */; };
+		414ED04E25AA7F90001D9809 /* AuthNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414ED04D25AA7F90001D9809 /* AuthNavigator.swift */; };
+		414ED05225AA7FF7001D9809 /* AuthViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414ED05125AA7FF7001D9809 /* AuthViewControllerFactory.swift */; };
+		414ED05825AA80EB001D9809 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414ED05725AA80EB001D9809 /* AuthService.swift */; };
+		414ED05D25AA8101001D9809 /* AuthServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414ED05C25AA8101001D9809 /* AuthServiceType.swift */; };
 		4173629E250E56B80021A364 /* MovieTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4173629D250E56B70021A364 /* MovieTableViewModel.swift */; };
 		417362A5250E586B0021A364 /* MovieCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417362A4250E586B0021A364 /* MovieCellViewModel.swift */; };
 		417362AA250E63810021A364 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417362A9250E63810021A364 /* View.swift */; };
@@ -55,6 +66,7 @@
 		41022D02250E357D00A2709E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41022D08250E35CD00A2709E /* MoviesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
 		41022D0F250E479C00A2709E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		4120D06725AB71290048DC9D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4127DE102515389D004C123F /* MovieEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEndpoints.swift; sourceTree = "<group>"; };
 		4127DE1525153D68004C123F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		4127DE1825153D78004C123F /* EndpointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
@@ -72,6 +84,16 @@
 		41466F9225165DA200E22CA1 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		414ECFFF25AA6ED3001D9809 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		414ED03225AA7280001D9809 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		414ED03825AA7EFC001D9809 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		414ED03C25AA7F0C001D9809 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		414ED04125AA7F3F001D9809 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		414ED04425AA7F50001D9809 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		414ED04725AA7F63001D9809 /* SignUpViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModelType.swift; sourceTree = "<group>"; };
+		414ED04A25AA7F73001D9809 /* LogInViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModelType.swift; sourceTree = "<group>"; };
+		414ED04D25AA7F90001D9809 /* AuthNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigator.swift; sourceTree = "<group>"; };
+		414ED05125AA7FF7001D9809 /* AuthViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewControllerFactory.swift; sourceTree = "<group>"; };
+		414ED05725AA80EB001D9809 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		414ED05C25AA8101001D9809 /* AuthServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceType.swift; sourceTree = "<group>"; };
 		4173629D250E56B70021A364 /* MovieTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewModel.swift; sourceTree = "<group>"; };
 		417362A4250E586B0021A364 /* MovieCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellViewModel.swift; sourceTree = "<group>"; };
 		417362A9250E63810021A364 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -147,6 +169,8 @@
 		41022D0A250E35D100A2709E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				414ED03625AA7ED2001D9809 /* SignUpViewController */,
+				414ED03525AA7EC2001D9809 /* LoginViewController */,
 				414ECFFE25AA6E1E001D9809 /* EntryViewController */,
 				414209302516A7560007D0DB /* DetailsViewController */,
 				4127DE4525155972004C123F /* MovieTableViewController */,
@@ -166,6 +190,7 @@
 		41022D0C250E35E700A2709E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				414ED03F25AA7F1F001D9809 /* Auth */,
 				414209362516AAC80007D0DB /* MovieDetails */,
 				41FFE870251216B700B7A6F8 /* MovieCell */,
 				41FFE86F251216A100B7A6F8 /* MovieTable */,
@@ -209,6 +234,7 @@
 		4127DE21251544F1004C123F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				414ED05625AA80DB001D9809 /* AuthService */,
 				4182EFA125A8DF5400F6B108 /* VCFactoryService */,
 				4182EFA025A8DF2C00F6B108 /* MovieService */,
 			);
@@ -297,6 +323,66 @@
 			path = EntryViewController;
 			sourceTree = "<group>";
 		};
+		414ED03525AA7EC2001D9809 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				414ED03825AA7EFC001D9809 /* LoginViewController.swift */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		414ED03625AA7ED2001D9809 /* SignUpViewController */ = {
+			isa = PBXGroup;
+			children = (
+				414ED03C25AA7F0C001D9809 /* SignUpViewController.swift */,
+			);
+			path = SignUpViewController;
+			sourceTree = "<group>";
+		};
+		414ED03F25AA7F1F001D9809 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				414ED04025AA7F27001D9809 /* Protocols */,
+				414ED04125AA7F3F001D9809 /* SignUpViewModel.swift */,
+				414ED04425AA7F50001D9809 /* LoginViewModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		414ED04025AA7F27001D9809 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				414ED04725AA7F63001D9809 /* SignUpViewModelType.swift */,
+				414ED04A25AA7F73001D9809 /* LogInViewModelType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		414ED05025AA7FC6001D9809 /* AuthViewControllerFactory */ = {
+			isa = PBXGroup;
+			children = (
+				414ED05125AA7FF7001D9809 /* AuthViewControllerFactory.swift */,
+			);
+			path = AuthViewControllerFactory;
+			sourceTree = "<group>";
+		};
+		414ED05625AA80DB001D9809 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				414ED05725AA80EB001D9809 /* AuthService.swift */,
+				414ED05B25AA80F0001D9809 /* Protocols */,
+			);
+			path = AuthService;
+			sourceTree = "<group>";
+		};
+		414ED05B25AA80F0001D9809 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				414ED05C25AA8101001D9809 /* AuthServiceType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		4161A4C92515625700FB218F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				417362A9250E63810021A364 /* View.swift */,
+				4120D06725AB71290048DC9D /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,7 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				4127DE1E251544EB004C123F /* MovieService.swift */,
-				419D045725A60D6900759014 /* PROTOCOLS */,
+				419D045725A60D6900759014 /* Protocols */,
 			);
 			path = MovieService;
 			sourceTree = "<group>";
@@ -354,6 +441,7 @@
 		4182EFA125A8DF5400F6B108 /* VCFactoryService */ = {
 			isa = PBXGroup;
 			children = (
+				414ED05025AA7FC6001D9809 /* AuthViewControllerFactory */,
 				4182EFA225A8DF6300F6B108 /* MovieViewControllerFactory */,
 			);
 			path = VCFactoryService;
@@ -379,16 +467,17 @@
 			isa = PBXGroup;
 			children = (
 				4182EFB225A90B0900F6B108 /* MoviesNavigator.swift */,
+				414ED04D25AA7F90001D9809 /* AuthNavigator.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		419D045725A60D6900759014 /* PROTOCOLS */ = {
+		419D045725A60D6900759014 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				4127DE2325154538004C123F /* MovieServiceType.swift */,
 			);
-			path = PROTOCOLS;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		41E9304825164F3400D0A2EB /* Protocols */ = {
@@ -579,6 +668,7 @@
 				4127DE1C25154024004C123F /* NetworkManager.swift in Sources */,
 				414209342516A7B00007D0DB /* DetailsViewController.swift in Sources */,
 				41FE71C0250FB8EC00092A7A /* MovieViewCell.swift in Sources */,
+				414ED04E25AA7F90001D9809 /* AuthNavigator.swift in Sources */,
 				4127DE2A25155348004C123F /* ImagePath.swift in Sources */,
 				4182EFAE25A90AB500F6B108 /* NavigatorType.swift in Sources */,
 				4127DE112515389D004C123F /* MovieEndpoints.swift in Sources */,
@@ -588,6 +678,7 @@
 				4182EF9D25A8DCDD00F6B108 /* ViewControllerFactoryType.swift in Sources */,
 				417362A5250E586B0021A364 /* MovieCellViewModel.swift in Sources */,
 				41022CF5250E357C00A2709E /* AppDelegate.swift in Sources */,
+				4120D06825AB71290048DC9D /* Color.swift in Sources */,
 				4127DE3625155624004C123F /* ImageManager.swift in Sources */,
 				41FFE8592511460D00B7A6F8 /* HTTPMethods.swift in Sources */,
 				4182EFB325A90B0900F6B108 /* MoviesNavigator.swift in Sources */,
@@ -596,16 +687,25 @@
 				414ED03325AA7280001D9809 /* EntryViewController.swift in Sources */,
 				4142093D2516AB100007D0DB /* MovieDetailsViewModel.swift in Sources */,
 				417362AA250E63810021A364 /* View.swift in Sources */,
+				414ED05D25AA8101001D9809 /* AuthServiceType.swift in Sources */,
 				4127DE1F251544EB004C123F /* MovieService.swift in Sources */,
 				4127DE2D25155364004C123F /* ImagePathType.swift in Sources */,
+				414ED04225AA7F3F001D9809 /* SignUpViewModel.swift in Sources */,
 				41FFE86A2512147900B7A6F8 /* NetworkManagerType.swift in Sources */,
+				414ED04825AA7F63001D9809 /* SignUpViewModelType.swift in Sources */,
 				4127DE1625153D68004C123F /* Endpoint.swift in Sources */,
+				414ED05825AA80EB001D9809 /* AuthService.swift in Sources */,
 				4127DE1925153D78004C123F /* EndpointType.swift in Sources */,
+				414ED04B25AA7F73001D9809 /* LogInViewModelType.swift in Sources */,
 				41466F9325165DA200E22CA1 /* Box.swift in Sources */,
 				4127DE3925155639004C123F /* ImageManagerType.swift in Sources */,
+				414ED05225AA7FF7001D9809 /* AuthViewControllerFactory.swift in Sources */,
 				4182EFA425A8DF9800F6B108 /* MovieViewControllerFactory.swift in Sources */,
+				414ED04525AA7F50001D9809 /* LoginViewModel.swift in Sources */,
 				4198E1072512A64700703AC9 /* NetworkConstants.swift in Sources */,
+				414ED03D25AA7F0C001D9809 /* SignUpViewController.swift in Sources */,
 				4127DE2425154538004C123F /* MovieServiceType.swift in Sources */,
+				414ED03925AA7EFC001D9809 /* LoginViewController.swift in Sources */,
 				4173629E250E56B80021A364 /* MovieTableViewModel.swift in Sources */,
 				41FFE874251243E000B7A6F8 /* MovieTableViewModelType.swift in Sources */,
 				41022CF7250E357C00A2709E /* SceneDelegate.swift in Sources */,

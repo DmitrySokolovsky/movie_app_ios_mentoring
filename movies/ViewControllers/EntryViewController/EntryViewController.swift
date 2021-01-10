@@ -40,15 +40,14 @@ class EntryViewController: UIViewController {
     
     private func configureView() {
         view.backgroundColor = .white
+        
         view.addSubview(container)
         container.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
+        
         container.addSubview(activityIndicatorView)
-        
         activityIndicatorView.anchor(width: 50, height: 50)
-        
         activityIndicatorView.centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true
         activityIndicatorView.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
-
         activityIndicatorView.startAnimating()
     }
 
