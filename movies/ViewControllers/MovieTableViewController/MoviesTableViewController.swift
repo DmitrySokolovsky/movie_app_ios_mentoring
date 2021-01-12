@@ -66,7 +66,7 @@ extension MoviesTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let viewModel = viewModel else { return } // TODO remove
+        guard let viewModel = viewModel else { return }
         viewModel.selectRow(atIndexPath: indexPath)
         let viewModelForSelectedRow = viewModel.viewModelForSelectedRow()
         navigator?.navigate(to: .movieDetails(viewModel: viewModelForSelectedRow))

@@ -22,18 +22,21 @@ class EntryViewController: UIViewController {
         return v
     }()
     
+    // MARK: - properties
+    
+    private var navigator: AuthNavigator?
+    
     // MARK: - lifecycle methods
 
     override func viewDidLoad() {
+        navigator = AuthNavigator(navigationController: self.navigationController!)
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         configureView()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         
-        navigationController?.setNavigationBarHidden(false, animated: false)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.navigator?.navigate(to: .login)
+        }
     }
     
     // MARK: - UI configuration

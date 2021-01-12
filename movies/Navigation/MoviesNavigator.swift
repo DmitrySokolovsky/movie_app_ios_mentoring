@@ -23,7 +23,6 @@ class MovieNavigator: Navigator {
     }
     
     func navigate(to route: Route) {
-        
         guard let navController = navigationController else {
             return
         }
@@ -34,7 +33,6 @@ class MovieNavigator: Navigator {
     }
     
     func makeViewController(for route: Route) -> UIViewController {
-        
         switch route {
         case .movieDetails(let viewModel):
             return viewControllerFactory.makeViewController(controller: .movieDetailsController(viewModel: viewModel))

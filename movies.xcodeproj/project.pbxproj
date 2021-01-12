@@ -145,6 +145,7 @@
 		41022CF3250E357C00A2709E /* movies */ = {
 			isa = PBXGroup;
 			children = (
+				4120D06A25AB88840048DC9D /* Views */,
 				4182EFB125A90AEE00F6B108 /* Navigation */,
 				4161A4C92515625700FB218F /* Helpers */,
 				417362A8250E63720021A364 /* Extensions */,
@@ -229,6 +230,13 @@
 				4127DE102515389D004C123F /* MovieEndpoints.swift */,
 			);
 			path = Movie;
+			sourceTree = "<group>";
+		};
+		4120D06A25AB88840048DC9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		4127DE21251544F1004C123F /* Services */ = {
