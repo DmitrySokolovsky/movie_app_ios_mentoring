@@ -9,21 +9,24 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    // MARK: - properties
+    private var navigator: AuthNavigator! // if i add Navigator as type - I've got an error "Protocol 'Navigator' can only be used as a generic constraint because it has Self or associated type requirements"
+    
     // MARK: - views
     private lazy var loginTextField: UITextField = {
         let loginTF = UITextField()
-        loginTF.attributedPlaceholder = NSAttributedString(string: "Login",
+        loginTF.attributedPlaceholder = NSAttributedString(string: "Email",
                                                            attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         loginTF.borderStyle = .roundedRect
         return loginTF
     }()
     
     private lazy var passwordTextField: UITextField = {
-        let signUpTF = UITextField()
-        signUpTF.attributedPlaceholder = NSAttributedString(string: "Password",
+        let passwordTF = UITextField()
+        passwordTF.attributedPlaceholder = NSAttributedString(string: "Password",
                                                            attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
-        signUpTF.borderStyle = .roundedRect
-        return signUpTF
+        passwordTF.borderStyle = .roundedRect
+        return passwordTF
     }()
     
     private lazy var label: UILabel = {
@@ -54,6 +57,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigator = AuthNavigator(navigationController: navigationController!)
+        
         configureView()
     }
     
@@ -83,6 +88,6 @@ class LoginViewController: UIViewController {
     }
     
     @objc func handleSignUpPress(sender: UIButton!) {
-        print("HEllo")
+        navigator.navigate(to: .signUp)
     }
 }

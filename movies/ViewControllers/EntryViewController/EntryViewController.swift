@@ -34,8 +34,8 @@ class EntryViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
         configureView()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.navigator?.navigate(to: .login)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.navigator?.navigate(to: .signUp)
         }
     }
     
