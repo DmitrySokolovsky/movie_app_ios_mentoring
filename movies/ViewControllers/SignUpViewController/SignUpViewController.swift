@@ -10,8 +10,8 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     // MARK: - properties
-    private var navigator: AuthNavigator!
-    
+    var onCompleteSignUp: (() -> Void)?
+    var onLoginButtonPress: (() -> Void)?
     // MARK: - views
     private lazy var label: UILabel = {
         let l = UILabel()
@@ -64,7 +64,6 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigator = AuthNavigator(navigationController: navigationController!)
         configureView()
     }
     
@@ -98,7 +97,7 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func handleLogInPress() {
-        navigator.navigate(to: .login)
+        onLoginButtonPress?()
     }
 
 }

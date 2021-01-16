@@ -9,6 +9,9 @@
 import UIKit
 
 class EntryViewController: UIViewController {
+    // MARK: - properties
+    
+    var onCompleteUserCheck: (() -> Void)?
     // MARK: - views
     
     lazy var activityIndicatorView: UIActivityIndicatorView = {
@@ -23,19 +26,16 @@ class EntryViewController: UIViewController {
     }()
     
     // MARK: - properties
-    
-    private var navigator: AuthNavigator?
-    
+        
     // MARK: - lifecycle methods
 
     override func viewDidLoad() {
-        navigator = AuthNavigator(navigationController: self.navigationController!)
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         configureView()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.navigator?.navigate(to: .signUp)
+            print("navigate")
         }
     }
     

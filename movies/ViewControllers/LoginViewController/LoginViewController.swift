@@ -10,8 +10,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     // MARK: - properties
-    private var navigator: AuthNavigator! // if i add Navigator as type - I've got an error "Protocol 'Navigator' can only be used as a generic constraint because it has Self or associated type requirements"
-    
+    var onCompleteLogin: (() -> Void)?
+    var onSignUpButtonPress: (() -> Void)?
     // MARK: - views
     private lazy var loginTextField: UITextField = {
         let loginTF = UITextField()
@@ -56,9 +56,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigator = AuthNavigator(navigationController: navigationController!)
-        
+                
         configureView()
     }
     
@@ -88,6 +86,6 @@ class LoginViewController: UIViewController {
     }
     
     @objc func handleSignUpPress(sender: UIButton!) {
-        navigator.navigate(to: .signUp)
+        onSignUpButtonPress?()
     }
 }

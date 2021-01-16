@@ -10,17 +10,15 @@ import UIKit
 
 class MoviesTableViewController: UITableViewController {
     // MARK: - properties
-    private var viewModel: MovieTableViewModelType?
-    private var navigator: MovieNavigator?
+    var viewModel: MovieTableViewModelType?
+    var onMoviePress: ((MovieDetailsViewModelType) -> Void)?
 
     // MARK: - lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigator = MovieNavigator(navigationController: (self.navigationController)!)
         
         tableView.rowHeight = UITableView.automaticDimension
-        viewModel = MovieTableViewModel()
         tableView.register(MovieViewCell.self, forCellReuseIdentifier: "movieCell")
         tableView.separatorStyle = .none
         tableView.bounces = false
@@ -69,6 +67,5 @@ extension MoviesTableViewController {
         guard let viewModel = viewModel else { return }
         viewModel.selectRow(atIndexPath: indexPath)
         let viewModelForSelectedRow = viewModel.viewModelForSelectedRow()
-        navigator?.navigate(to: .movieDetails(viewModel: viewModelForSelectedRow))
     }
 }
