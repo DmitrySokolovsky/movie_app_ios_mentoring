@@ -9,6 +9,6 @@
 import Foundation
 
 protocol MovieModuleFactoryType {
-    func makeMovieTableView() -> MoviesTableViewController
-    func makeMovieDetailsView() -> DetailsViewController
+    func makeMovieTableController() -> MoviesTableViewController
+    func makeMovieDetailsViewController() -> DetailsViewController
 }

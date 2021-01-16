@@ -9,16 +9,15 @@
 import Foundation
 import UIKit
 
-class ViewControllerFactory: AuthViewControllerFactoryType {
-    func makeMovieTableController(movieTableViewModel: MovieTableViewModelType) -> MoviesTableViewController {
+class ViewControllerFactory: AuthModuleFactoryType, EntryModuleFactoryType, MovieModuleFactoryType {
+    
+    func makeMovieTableController() -> MoviesTableViewController {
         let movieTableVC = MoviesTableViewController()
-        movieTableVC.viewModel = movieTableViewModel
         return movieTableVC
     }
     
-    func makeMovieDetailsViewController(movieDetailsViewModel: MovieDetailsViewModelType) -> DetailsViewController {
+    func makeMovieDetailsViewController() -> DetailsViewController {
         let detailsVC = DetailsViewController()
-        detailsVC.viewModel = movieDetailsViewModel
         return detailsVC
     }
     

@@ -23,7 +23,7 @@ class MovieCoordinator: BaseCoordinator {
     }
     
     func showMovieTable() {
-        let movieTableVC = factory.makeMovieTableView()
+        let movieTableVC = factory.makeMovieTableController()
         movieTableVC.viewModel = MovieTableViewModel()
         movieTableVC.onMoviePress = { [weak self] viewModel in
             self?.showMovieDetails(viewModel: viewModel)
@@ -32,7 +32,7 @@ class MovieCoordinator: BaseCoordinator {
     }
     
     func showMovieDetails(viewModel: MovieDetailsViewModelType) {
-        let movieDetailsVC = factory.makeMovieDetailsView()
+        let movieDetailsVC = factory.makeMovieDetailsViewController()
         movieDetailsVC.viewModel = viewModel
         navigator.navigate(module: movieDetailsVC)
     }

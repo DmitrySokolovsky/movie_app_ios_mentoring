@@ -45,6 +45,7 @@
 		4152784E25B2E3500012AEAE /* EntryModuleFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4152784D25B2E3500012AEAE /* EntryModuleFactoryType.swift */; };
 		4152785125B2E4C20012AEAE /* MovieModuleFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4152785025B2E4C20012AEAE /* MovieModuleFactoryType.swift */; };
 		4152785525B2E5440012AEAE /* MovieCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4152785425B2E5440012AEAE /* MovieCoordinator.swift */; };
+		4152785825B2ED1C0012AEAE /* CoordinatorFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4152785725B2ED1C0012AEAE /* CoordinatorFactoryType.swift */; };
 		4173629E250E56B80021A364 /* MovieTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4173629D250E56B70021A364 /* MovieTableViewModel.swift */; };
 		417362A5250E586B0021A364 /* MovieCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417362A4250E586B0021A364 /* MovieCellViewModel.swift */; };
 		417362AA250E63810021A364 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417362A9250E63810021A364 /* View.swift */; };
@@ -107,6 +108,7 @@
 		4152784D25B2E3500012AEAE /* EntryModuleFactoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryModuleFactoryType.swift; sourceTree = "<group>"; };
 		4152785025B2E4C20012AEAE /* MovieModuleFactoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModuleFactoryType.swift; sourceTree = "<group>"; };
 		4152785425B2E5440012AEAE /* MovieCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCoordinator.swift; sourceTree = "<group>"; };
+		4152785725B2ED1C0012AEAE /* CoordinatorFactoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoryType.swift; sourceTree = "<group>"; };
 		4173629D250E56B70021A364 /* MovieTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewModel.swift; sourceTree = "<group>"; };
 		417362A4250E586B0021A364 /* MovieCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellViewModel.swift; sourceTree = "<group>"; };
 		417362A9250E63810021A364 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -427,7 +429,7 @@
 		417362A1250E56ED0021A364 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				41E7251925B07ABF00F21164 /* Coordinator */,
+				41E7251925B07ABF00F21164 /* CoordinatorFactory */,
 				41E7250B25B0724D00F21164 /* Presentable */,
 				4182EFAB25A90A9100F6B108 /* Navigator */,
 				4182EF9B25A8DCBF00F6B108 /* VCFactory */,
@@ -497,13 +499,14 @@
 			path = Navigator;
 			sourceTree = "<group>";
 		};
-		41E7251925B07ABF00F21164 /* Coordinator */ = {
+		41E7251925B07ABF00F21164 /* CoordinatorFactory */ = {
 			isa = PBXGroup;
 			children = (
 				41E7251A25B07ACD00F21164 /* CoordinatorType.swift */,
 				4152784725B2E2730012AEAE /* CoordinatorOutputType.swift */,
+				4152785725B2ED1C0012AEAE /* CoordinatorFactoryType.swift */,
 			);
-			path = Coordinator;
+			path = CoordinatorFactory;
 			sourceTree = "<group>";
 		};
 		41E7251E25B07D3100F21164 /* BaseCoordinator */ = {
@@ -772,6 +775,7 @@
 				414ED03925AA7EFC001D9809 /* LoginViewController.swift in Sources */,
 				4173629E250E56B80021A364 /* MovieTableViewModel.swift in Sources */,
 				41FFE874251243E000B7A6F8 /* MovieTableViewModelType.swift in Sources */,
+				4152785825B2ED1C0012AEAE /* CoordinatorFactoryType.swift in Sources */,
 				41022CF7250E357C00A2709E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,10 +11,10 @@ import Foundation
 class AuthCoordinator: BaseCoordinator, CoordinatorOutputType {
     var finishFlow: (() -> Void)?
     
-    private let factory: AuthViewControllerFactoryType
+    private let factory: AuthModuleFactoryType
     private let navigator: NavigatorType
      
-    init(factory: AuthViewControllerFactoryType, navigator: NavigatorType) {
+    init(factory: AuthModuleFactoryType, navigator: NavigatorType) {
         self.factory = factory
         self.navigator = navigator
     }
