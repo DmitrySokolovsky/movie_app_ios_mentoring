@@ -46,6 +46,8 @@
 		4152785125B2E4C20012AEAE /* MovieModuleFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4152785025B2E4C20012AEAE /* MovieModuleFactoryType.swift */; };
 		4152785525B2E5440012AEAE /* MovieCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4152785425B2E5440012AEAE /* MovieCoordinator.swift */; };
 		4152785825B2ED1C0012AEAE /* CoordinatorFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4152785725B2ED1C0012AEAE /* CoordinatorFactoryType.swift */; };
+		4152785B25B2F13D0012AEAE /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4152785A25B2F13D0012AEAE /* ApplicationCoordinator.swift */; };
+		4152785F25B32C510012AEAE /* LauncherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4152785E25B32C510012AEAE /* LauncherService.swift */; };
 		4173629E250E56B80021A364 /* MovieTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4173629D250E56B70021A364 /* MovieTableViewModel.swift */; };
 		417362A5250E586B0021A364 /* MovieCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417362A4250E586B0021A364 /* MovieCellViewModel.swift */; };
 		417362AA250E63810021A364 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417362A9250E63810021A364 /* View.swift */; };
@@ -109,6 +111,8 @@
 		4152785025B2E4C20012AEAE /* MovieModuleFactoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModuleFactoryType.swift; sourceTree = "<group>"; };
 		4152785425B2E5440012AEAE /* MovieCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCoordinator.swift; sourceTree = "<group>"; };
 		4152785725B2ED1C0012AEAE /* CoordinatorFactoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoryType.swift; sourceTree = "<group>"; };
+		4152785A25B2F13D0012AEAE /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		4152785E25B32C510012AEAE /* LauncherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherService.swift; sourceTree = "<group>"; };
 		4173629D250E56B70021A364 /* MovieTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewModel.swift; sourceTree = "<group>"; };
 		417362A4250E586B0021A364 /* MovieCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellViewModel.swift; sourceTree = "<group>"; };
 		417362A9250E63810021A364 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 		4127DE21251544F1004C123F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4152785D25B32C3D0012AEAE /* LauncherService */,
 				41E7251E25B07D3100F21164 /* BaseCoordinator */,
 				41E7251325B0743200F21164 /* Navigator */,
 				414ED05625AA80DB001D9809 /* AuthService */,
@@ -407,6 +412,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		4152785D25B32C3D0012AEAE /* LauncherService */ = {
+			isa = PBXGroup;
+			children = (
+				4152785E25B32C510012AEAE /* LauncherService.swift */,
+			);
+			path = LauncherService;
+			sourceTree = "<group>";
+		};
 		4161A4C92515625700FB218F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +544,7 @@
 			isa = PBXGroup;
 			children = (
 				41DC6A2025B1F1BA00EE9738 /* AuthCoordinator.swift */,
+				4152785A25B2F13D0012AEAE /* ApplicationCoordinator.swift */,
 				4152784425B2E2490012AEAE /* EntryCoordinator.swift */,
 				4152785425B2E5440012AEAE /* MovieCoordinator.swift */,
 			);
@@ -754,6 +768,7 @@
 				41FFE86A2512147900B7A6F8 /* NetworkManagerType.swift in Sources */,
 				414ED04825AA7F63001D9809 /* SignUpViewModelType.swift in Sources */,
 				41E7251B25B07ACD00F21164 /* CoordinatorType.swift in Sources */,
+				4152785F25B32C510012AEAE /* LauncherService.swift in Sources */,
 				4127DE1625153D68004C123F /* Endpoint.swift in Sources */,
 				414ED05825AA80EB001D9809 /* AuthService.swift in Sources */,
 				4127DE1925153D78004C123F /* EndpointType.swift in Sources */,
@@ -777,6 +792,7 @@
 				41FFE874251243E000B7A6F8 /* MovieTableViewModelType.swift in Sources */,
 				4152785825B2ED1C0012AEAE /* CoordinatorFactoryType.swift in Sources */,
 				41022CF7250E357C00A2709E /* SceneDelegate.swift in Sources */,
+				4152785B25B2F13D0012AEAE /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

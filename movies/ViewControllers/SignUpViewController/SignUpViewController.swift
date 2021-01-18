@@ -11,7 +11,7 @@ import UIKit
 class SignUpViewController: UIViewController {
     // MARK: - properties
     var onCompleteSignUp: (() -> Void)?
-    var onLoginButtonPress: (() -> Void)?
+    var onLeaveScreen: (() -> Void)?
     // MARK: - views
     private lazy var label: UILabel = {
         let l = UILabel()
@@ -52,19 +52,15 @@ class SignUpViewController: UIViewController {
         button.addTarget(self, action: #selector(handleSignUpPress), for: .touchUpInside)
         return button
     }()
-    
-    private lazy var loginLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Log in"
-        label.isUserInteractionEnabled = true
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleLogInPress))
-        label.addGestureRecognizer(tapRecognizer)
-        return label
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        onLeaveScreen?()
     }
     
     private func configureView() {
@@ -86,18 +82,10 @@ class SignUpViewController: UIViewController {
         
         view.addSubview(signUpButton)
         signUpButton.anchor(top: confirmPasswordTextField.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 25, paddingRight: 25, height: 40)
-        
-        view.addSubview(loginLabel)
-        loginLabel.anchor(bottom: view.bottomAnchor, paddingBottom: 20)
-        loginLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     @objc private func handleSignUpPress(sender: UIButton) {
         print("SIGN")
-    }
-    
-    @objc private func handleLogInPress() {
-        onLoginButtonPress?()
     }
 
 }

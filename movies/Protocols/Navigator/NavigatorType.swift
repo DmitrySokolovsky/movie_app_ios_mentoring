@@ -15,6 +15,9 @@ protocol NavigatorType: PresentableType {
     func navigate(module: PresentableType?)
     func navigate(module: PresentableType?, animated: Bool)
     func navigate(module: PresentableType?, animated: Bool, completion: (() -> Void)?)
+    func navigate(module: PresentableType?, isNavBarHidden: Bool)
+    
+    func setNavBarHidden(navBarHidden: Bool)
     
     func dismissModule()
     func dismissModule(animated: Bool, completion: (() -> Void)?)

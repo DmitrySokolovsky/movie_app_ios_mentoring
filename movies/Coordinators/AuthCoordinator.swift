@@ -33,7 +33,7 @@ class AuthCoordinator: BaseCoordinator, CoordinatorOutputType {
             self?.showSignUp()
         }
         
-        navigator.navigate(module: loginVC)
+        navigator.setRootModule(module: loginVC, hideNavBar: true)
     }
     
     func showSignUp() {
@@ -42,10 +42,10 @@ class AuthCoordinator: BaseCoordinator, CoordinatorOutputType {
             self?.finishFlow?()
         }
         
-        signUpVC.onLoginButtonPress = { [weak self] in
-            self?.showLogin()
+        signUpVC.onLeaveScreen = { [weak self] in
+            self?.navigator.setNavBarHidden(navBarHidden: true)
         }
         
-        navigator.navigate(module: signUpVC)
+        navigator.navigate(module: signUpVC, isNavBarHidden: false)
     }
 }

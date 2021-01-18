@@ -10,8 +10,13 @@ import Foundation
 import UIKit
 
 class Navigator: NavigatorType {
+    
     private weak var rootNavigationController: UINavigationController?
     private var complitionHandlers: [UIViewController: () -> Void]
+    
+    func setNavBarHidden(navBarHidden: Bool) {
+        rootNavigationController?.isNavigationBarHidden = navBarHidden
+    }
     
     func popModule() {
         popModule(animated: true)
@@ -39,6 +44,11 @@ class Navigator: NavigatorType {
     
     func navigate(module: PresentableType?) {
         navigate(module: module, animated: true)
+    }
+    
+    func navigate(module: PresentableType?, isNavBarHidden: Bool) {
+        rootNavigationController?.isNavigationBarHidden = isNavBarHidden
+        navigate(module: module)
     }
     
     func navigate(module: PresentableType?, animated: Bool) {

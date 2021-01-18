@@ -28,6 +28,6 @@ class EntryCoordinator: BaseCoordinator, CoordinatorOutputType {
         entryVC.onCompleteUserCheck = { [weak self] in
             self?.finishFlow?()
         }
-        navigator.navigate(module: entryVC)
+        navigator.navigate(module: entryVC, isNavBarHidden: true)
     }
 }

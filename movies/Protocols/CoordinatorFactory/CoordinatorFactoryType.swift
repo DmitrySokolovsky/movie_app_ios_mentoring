@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CoordinatorFactoryType {
-    func makeEntryCoordinator(factory: EntryModuleFactoryType, navigator: NavigatorType) -> CoordinatorType
-    func makeAuthCoordinator(factory: AuthModuleFactoryType, navigator: NavigatorType) -> CoordinatorType
-    func makeMovieCoordinator(factory: MovieModuleFactoryType, navigator: NavigatorType) -> CoordinatorType
+    func makeEntryCoordinator(factory: EntryModuleFactoryType, navigator: NavigatorType) -> EntryCoordinator
+    func makeAuthCoordinator(factory: AuthModuleFactoryType, navigator: NavigatorType) -> AuthCoordinator
+    func makeMovieCoordinator(factory: MovieModuleFactoryType, navigator: NavigatorType) -> MovieCoordinator
 }

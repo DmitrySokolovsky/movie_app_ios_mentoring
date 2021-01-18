@@ -31,11 +31,10 @@ class EntryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
         configureView()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            print("navigate")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.onCompleteUserCheck?()
         }
     }
     
